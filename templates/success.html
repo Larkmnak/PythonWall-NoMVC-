@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Wall World</title>
+	<meta charset="utf-8">
+	<!-- <link rel="stylesheet" type="text/css" href="JQAssignment.css"> -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function()
+		{
+			$(".text_box").focus(function()
+			{	
+				$(this).css("background-color","grey");
+			});		
+		});
+
+	</script>
+
+</head>
+<body>
+	<div class="col-md-6 panel panel-default">
+		<div class="panel-heading">
+			<h1>Wall World</h1>
+			<div> {{ image }} </div>
+		</div>
+		<fomr class="panel-body" action="/new_user/create" method="POST">
+			<p>Post a Message:</p>
+			<input type="text" id="first" class="text_box">
+			<p>Descrtiption</p>
+			<input type="text" name="" id="des" class="text_box" style="width: 500px; height: 150px;">
+			<p></p>
+			<input type="submit" id="add" value="Add User">
+		</fomr>		
+	</div>
+	<div class="col-md-6" id="contacts">
+		<!-- <div class="panel panel-default">
+			<div class="panel-heading"><h1 class="panel-title" id="header">Examle Panel</h1></div>
+			<div class="panel-body">
+			<p id="put"></p>
+			<p id ="change">Click for description!</p>
+			</div>
+			-->		
+		</div>
+	</div>
+</body>
+</html>

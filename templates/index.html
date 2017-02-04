@@ -1,0 +1,54 @@
+<html lang = 'en'>
+<head>
+	<title>Welcome to Wall World</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+			body
+			{
+				margin: 40px 160px;
+				background-color: #ecf9ec;
+				background-attachment: fixed;
+			}
+			.panel-heading
+			{
+				background-color: #99ffd6 !important;
+			}
+			.panel-body
+			{
+				background-color: #ccffeb !important;
+			}
+	</style>
+</head>
+
+<body>
+
+	<div class="panel-default panel">
+		<div class="panel-heading text-center">
+			<h1>Welcome to Wall World</h1>
+		</div>			
+	</div>
+	
+	<hr>
+	<div class="panel-default panel">
+		<div class="panel-heading">
+			<h2>Login</h2>
+		</div>
+		<div class="panel-body">
+			<form action="/login" method="POST">
+				<p>Email: <input type="text" name="email"></p>
+				<p>Password: <input type="password" name="password"></p>
+				<p><input type="submit" value="Login"></p>
+			</form>
+			<form action="/new_user" method="POST">
+				<input type="submit" value="New User">
+			</form>
+			{{ dialogue }}
+		</div>		
+		
+	</div>
+	
+</body>
+</html>
