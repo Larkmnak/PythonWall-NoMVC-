@@ -1,0 +1,18 @@
+<html lang = 'en'>
+<head>
+  <title>Login</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<hr>
+	<form action="/Login/create" method="POST">
+		<p>Email: <input type="text" name="email"></p>
+		<p>Password: <input type="text" name="password"></p>
+		<p>Confirm Password: <input type="text" name="c_password"></p>
+		<p>First Name: <input type="text" name="first_name"></p>
+		<p>Last Name: <input type="text" name="last_name"></p>
+		<p><input type="submit" value="Create"></p>
+	</form>
+	<p>{{ dialogue }}</p>
+</body>
+</html>

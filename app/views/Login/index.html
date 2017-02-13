@@ -42,10 +42,22 @@
 				<p>Password: <input type="password" name="password"></p>
 				<p><input type="submit" value="Login"></p>
 			</form>
-			<form action="/new_user" method="POST">
+			<form action="/new" method="POST">
 				<input type="submit" value="New User">
 			</form>
 			{{ dialogue }}
+			<p>
+				{% with messages = get_flashed_messages() %}
+			      {% if messages %}
+			        <ul class=flashes>
+			          {% for message in messages %}
+			            <li><h3>Welcome {{ message }}!</h3></li>
+			          {% endfor %}
+			        </ul>
+			      {% endif %}
+			    {% endwith %}
+			</p>
+			
 		</div>		
 		
 	</div>

@@ -1,0 +1,28 @@
+<html lang = 'en'>
+<head>
+  <title>Login</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<hr>
+	<form action="/Login/create" method="POST">
+		<p>Email: <input type="text" name="email"></p>
+		<p>Password: <input type="text" name="password"></p>
+		<p>Confirm Password: <input type="text" name="pw_confirmation"></p>
+		<p>First Name: <input type="text" name="first_name"></p>
+		<p>Last Name: <input type="text" name="last_name"></p>
+		<p><input type="submit" value="Create"></p>
+	</form>
+	<p>{{ dialogue }}</p>
+	{% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li><h3>Welcome {{ message }}!</h3></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+</body>
+</body>
+</html>

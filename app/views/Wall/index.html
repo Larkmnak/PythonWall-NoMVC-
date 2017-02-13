@@ -1,0 +1,83 @@
+IMPLIMENT LINKS TO OLD MESSAGES NEXT TIME!! -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Wall World</title>
+		<meta charset="utf-8">
+		<!-- <link rel="stylesheet" type="text/css" href="JQAssignment.css"> -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function()
+			{
+				$(".text_box").focus(function()
+				{	
+					$(this).css("background-color","grey");
+				});		
+			});
+
+		</script>
+
+	</head>
+	<body>
+		<div class="col-md-6 panel panel-default">
+			<div class="panel-heading">
+				<h1>Wall World</h1>
+			</div>
+			<hr>
+				<h2>{{ Welcome }}</h2>
+			<hr>
+			<form class="panel-body" action="/wall/post" method="POST">
+				<p>Post a Message:</p>
+				<input type="text" name="new_msg" id="des" class="text_box" style="width: 500px; height: 150px;">
+				<p></p>
+				<input type="submit" id="add" value="Add Message">
+			</form>		
+		</div>
+		<div style="width: 800px; height: 1000px;">
+			{% for message in mess %}
+				<div class="panel panel-default" style="margin: 5rem;">
+					<div class="panel-heading">
+						<h1 class="panel-title" id="header">
+							<p>{{ message["full_name"] }}</p>
+						</h1>
+					</div>
+					<div class="panel-body">
+						<h4>{{ message["message"] }}</h4>
+						{% for comment in comm %}
+							{% if message['id'] == comment['messages_id'] %}
+								<p> {{ comment['comment'] }} : "{{ comment['full_name'] }}" </p>
+							{% endif %}
+						{% endfor %}
+						<div class="col-md-3">
+							<form action='/wall/comment/{{ message["id"] }}' method="POST">
+								<input type="text" name="comm_text"  class="text_box" style="width: 500px; height: 50px;">
+								<input type="submit" name value="Comment">
+							</form>
+						</div>
+						<div class="col-md-3 col-md-offset-10">
+							<form><input type="submit" value="Delete"></form>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- IMPLIMENT LINKS TO OLD MESSAGES NEXT TIME!!

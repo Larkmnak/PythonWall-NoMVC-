@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SUCCESS</title>
+</head>
+<body>
+	<h1>GREAT SUCCESS!!!!!!!!!!</h1>
+	{% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li><h3>Welcome {{ message }}!</h3></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+</body>
+</html>
